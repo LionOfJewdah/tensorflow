@@ -2008,7 +2008,8 @@ Status DistributedTPURewritePass::GetArgAndRetvalShapes(
     arg_shape.handle_shape = info->handle_shape;
     arg_shape.handle_type = info->handle_type;
     TF_RET_CHECK(arg_shape.handle_type != DT_INVALID)
-        << " input edge: " << input_edges[edge_pos]->DebugString();
+        << " input edge: " << input_edges[edge_pos]->DebugString() << "\n"
+        << "on variable #" << i << " of " << params_info.NumVariables();
     ++edge_pos;
   }
 
